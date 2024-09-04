@@ -13,13 +13,9 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.ExperimentalAnimationApi
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import com.example.stopwatch.service.StopwatchService
 import com.example.stopwatch.ui.theme.StopwatchTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -61,12 +57,6 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             StopwatchTheme {
-//                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-//                    Greeting(
-//                        name = "Android",
-//                        modifier = Modifier.padding(innerPadding)
-//                    )
-//                }
                 if (isBound) {
                     MainScreen(stopwatchService = stopwatchService)
                 }
@@ -84,22 +74,5 @@ class MainActivity : ComponentActivity() {
             }
         }
         requestPermissionLauncher.launch(permissions.asList().toTypedArray())
-    }
-}
-
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    StopwatchTheme {
-        Greeting("Android")
     }
 }

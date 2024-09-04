@@ -9,3 +9,13 @@
   <img src = "https://raw.githubusercontent.com/abhineshchandra1234/Stopwatch/master/app/src/main/res/drawable/screenshots/running_stopwatch.png" height=300px/>
 <img src = "https://raw.githubusercontent.com/abhineshchandra1234/Stopwatch/master/app/src/main/res/drawable/screenshots/notification_stopwatch.png" height=300px/>
 </p>
+
+---
+## Topics Covered
+- MVVM
+- Jetpack Compose
+- Services
+- Permissions
+- Notifications
+- Dependency Injection
+---

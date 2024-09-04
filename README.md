@@ -18,4 +18,5 @@
 - Permissions
 - Notifications
 - Dependency Injection
+- Animations
 ---

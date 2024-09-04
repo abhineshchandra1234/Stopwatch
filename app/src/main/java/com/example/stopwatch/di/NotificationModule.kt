@@ -1,8 +1,8 @@
 package com.example.stopwatch.di
 
-import android.app.Notification
 import android.app.NotificationManager
 import android.content.Context
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.core.app.NotificationCompat
 import com.example.stopwatch.R
 import com.example.stopwatch.service.ServiceHelper
@@ -14,6 +14,7 @@ import dagger.hilt.android.components.ServiceComponent
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.android.scopes.ServiceScoped
 
+@ExperimentalAnimationApi
 @Module
 @InstallIn(ServiceComponent::class)
 object NotificationModule {

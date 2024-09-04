@@ -3,7 +3,7 @@ package com.example.stopwatch.service
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
-import android.os.Build
+import androidx.compose.animation.ExperimentalAnimationApi
 import com.example.stopwatch.MainActivity
 import com.example.stopwatch.util.Constants.CANCEL_REQUEST_CODE
 import com.example.stopwatch.util.Constants.CLICK_REQUEST_CODE
@@ -11,6 +11,7 @@ import com.example.stopwatch.util.Constants.RESUME_REQUEST_CODE
 import com.example.stopwatch.util.Constants.STOPWATCH_STATE
 import com.example.stopwatch.util.Constants.STOP_REQUEST_CODE
 
+@ExperimentalAnimationApi
 object ServiceHelper {
 
     private val flag =

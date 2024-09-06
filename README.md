@@ -26,7 +26,9 @@
 
 ---
 ## Dependency Injection
-- we have `NotificationModule` object which will provide notification objects to the project wherever required, using its methods, it is annotated with `@Module`
+- we have a `NotificationModule` object which will provide notification objects to the project wherever required, using its methods, it is annotated with `@Module`
 - `@InstallIn(ServiceComponent::class)` and `@ServiceScoped` , we have different components like service, activity & fragment. By default, all bidings in the dagger are unscoped, which means each time binding is requested, the dagger will create a new binding instance. Whereas in scoped binding will only be created once per instance of the component it scoped to, and all requests for that binding will share the same instance
 - Service scope will be created when the service is created and destroyed when the service is destroyed. For the whole duration, a single instance of binding will be used.
+- we have a method `provideNotificationBuilder` which is annotated with `@Provides` and `@ServiceScoped`. `@Provides` is used as it returns an object of `NotificationCompat.Builder` which provides the notification layout. The app can use and change its certain features like content text, actions like - stop and cancel and its content intent
+- 
 ---

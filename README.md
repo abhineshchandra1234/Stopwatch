@@ -22,3 +22,11 @@
 ---
 ## MVVM architecture
 - we will try to cover the MVVM architecture of this project at a high level, covering all important features
+<img src = "https://raw.githubusercontent.com/abhineshchandra1234/Stopwatch/master/app/src/main/res/drawable/screenshots/project_structure.png" height=500px/>
+
+---
+## Dependency Injection
+- we have `NotificationModule` object which will provide notification objects to the project wherever required, using its methods, it is annotated with `@Module`
+- `@InstallIn(ServiceComponent::class)` and `@ServiceScoped` , we have different components like service, activity & fragment. By default, all bidings in the dagger are unscoped, which means each time binding is requested, the dagger will create a new binding instance. Whereas in scoped binding will only be created once per instance of the component it scoped to, and all requests for that binding will share the same instance
+- Service scope will be created when the service is created and destroyed when the service is destroyed. For the whole duration, a single instance of binding will be used.
+---

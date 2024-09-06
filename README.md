@@ -20,3 +20,5 @@
 - Dependency Injection
 - Animations
 ---
+## MVVM architecture
+- we will try to cover the MVVM architecture of this project at a high level, covering all important features

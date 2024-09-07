@@ -35,3 +35,4 @@
 - To use notification manager in Android, we need to create a `NotificationCompat.Builder` object or notification and set its properties like - title, text, icon and actions and then we can use the `NotificationManager` system service to issue the notification.
 - We are using `getSystemService()` method to obtain a reference to the NotificationManager system service and casting it to a NotificationManager object.
 ---
+## Services

@@ -31,6 +31,7 @@
 - Service scope will be created when the service is created and destroyed when the service is destroyed. For the whole duration, a single instance of binding will be used.
 - we have a method `provideNotificationBuilder` which is annotated with `@Provides` and `@ServiceScoped`. `@Provides` is used as it returns an object of `NotificationCompat.Builder` which provides the notification layout. The app can use and change its certain features like content text, actions like - stop and cancel and its content intent
 - We have passed `ApplicationContext` to `provideNotificationBuilder` method. This context is used by `ServiceHelper` class which discovers and instantiates services for that context.
+- We are using the method `provideNotificationManager` to provide the NotificationManager object, It is annotated with `@ServiceScoped` and `@Provides` and takes `ApplicationContext` as a parameter
 - To use notification manager in Android, we need to create a `NotificationCompat.Builder` object or notification and set its properties like - title, text, icon and actions and then we can use the `NotificationManager` system service to issue the notification.
-- We are using `getSystemService()` method to obtain a reference to the NotificationManager system service
+- We are using `getSystemService()` method to obtain a reference to the NotificationManager system service and casting it to a NotificationManager object.
 ---

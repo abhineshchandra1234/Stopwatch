@@ -39,4 +39,4 @@
 - We have the `StopwatchService` class extending the service class
 - We have done dependency injection using annotation `AndroidEntryPoint`
 - We have injected two objects `notificationManager` and `notificationBuilder`. `notificationManager` as the name implies will manage the notification, and will take care of the notification service. `notificationBuilder` as the name implies will provide a layout for the notification. we will inject both objects through `Inject` annotation as the fields.
-- 
+- we have created a `StopwatchBinder` object named `binder` for inter-process communication, which will return a replica of StopwatchService running in a separate thread of the same service.

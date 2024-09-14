@@ -36,3 +36,6 @@
 - We are using `getSystemService()` method to obtain a reference to the NotificationManager system service and casting it to a NotificationManager object.
 ---
 ## Services
+- We have `StopwatchService` class extending service class
+- We have done dependency injection using annotation `AndroidEntryPoint`
+- We have injected two objects 

@@ -45,3 +45,4 @@
 - Then we have states for `seconds`, `minutes`, `hours` and `currentState`.
 - we can also reset the values of the above states privately.
 - `currentState` uses the StopwatchState enum class values
+- We have first overridden `onBind` method, which returns the communication channel (IBinder) to the service. Multiple clients can connect to the service at once. however, the system calls `onBind` method 

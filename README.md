@@ -46,3 +46,7 @@
 - we can also reset the values of the above states privately.
 - `currentState` uses the StopwatchState enum class values
 - We have first overridden `onBind` method, which returns the communication channel (IBinder) to the service. Multiple clients can connect to the service at once. however, the system calls `onBind` method to retrieve the IBinder only when the first client binds. The system then delivers the same IBinder to any additional clients that bind, without calling `onBind` again.
+- We have overridden `onStartCommand` method, It is called every time a client starts a service using startService(Intent intent). It is called multiple times and is used to start and communicate with the service. We should do things in these methods that are needed each time a client requests something from our service. Suppose we don't implement `onStartCommand`. In that case, we won't be able to get any information from the intent that the client passes to `onStartCommand` and our service will not be able to do any useful work.
+---
+## References
+- [Android onCreate or onStartCommand for starting service](https://stackoverflow.com/questions/14182014/android-oncreate-or-onstartcommand-for-starting-service)

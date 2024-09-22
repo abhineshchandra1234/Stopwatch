@@ -45,8 +45,12 @@
 - Then we have states for `seconds`, `minutes`, `hours` and `currentState`.
 - we can also reset the values of the above states privately.
 - `currentState` uses the StopwatchState enum class values
+---
 - We have first overridden `onBind` method, which returns the communication channel (IBinder) to the service. Multiple clients can connect to the service at once. however, the system calls `onBind` method to retrieve the IBinder only when the first client binds. The system then delivers the same IBinder to any additional clients that bind, without calling `onBind` again.
-- We have overridden `onStartCommand` method, It is called every time a client starts a service using startService(Intent intent). It is called multiple times and is used to start and communicate with the service. We should do things in these methods that are needed each time a client requests something from our service. Suppose we don't implement `onStartCommand`. In that case, we won't be able to get any information from the intent that the client passes to `onStartCommand` and our service will not be able to do any useful work.
+---
+- We have overridden the `onStartCommand` method, It is called every time a client starts a service using startService(Intent intent). It is called multiple times and is used to start and communicate with the service. We should do things in these methods that are needed each time a client requests something from our service. Suppose we don't implement `onStartCommand`. In that case, we won't be able to get any information from the intent that the client passes to `onStartCommand` and our service will not be able to do any useful work.
+- In `onStartCommand`, we are first fetching string values from intent
+- If the string value is `started` of enum class `StopwatchState`, then we do the following. set the stop button. set the stop button will build the notification using notificationBuilder and notify the notificationManager. The stop button will be added to the notification. Start the foreground service, which will start the foreground service and display the notification. `startStopwatch` will start the timer from 0. `startStopwatch` also has a callback `onTick` which is passing hours, minutes and seconds values back to `updateNotification` method. `updateNotification` is rebuilding the notification with new values and notifying the `NotificationManager`.
 ---
 ## References
 - [Android onCreate or onStartCommand for starting service](https://stackoverflow.com/questions/14182014/android-oncreate-or-onstartcommand-for-starting-service)
